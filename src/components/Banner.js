@@ -1,12 +1,12 @@
 import Image from "next/image";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // required
-import carouselImage1 from "../assets/carousel1.jpg";
-import carouselImage2 from "../assets/carousel2.jpg";
-import carouselImage3 from "../assets/carousel3.jpg";
-import carouselImage4 from "../assets/carousel4.jpg";
-import carouselImage5 from "../assets/carousel5.jpg";
-import carouselImage6 from "../assets/carousel6.jpg";
+// import carouselImage1 from "../assets/carousel1.jpg";
+// import carouselImage2 from "../assets/carousel2.jpg";
+// import carouselImage3 from "../assets/carousel3.jpg";
+// import carouselImage4 from "../assets/carousel4.jpg";
+// import carouselImage5 from "../assets/carousel5.jpg";
+// import carouselImage6 from "../assets/carousel6.jpg";
 
 const Banner = () => {
   return (
@@ -21,27 +21,69 @@ const Banner = () => {
         interval={5000}
       >
         <div>
-          <Image loading="lazy" src={carouselImage1} alt="Carousel_Image" />
+          <Image
+            loading="lazy"
+            src="/carousel1.jpg"
+            alt="Carousel_Image"
+            height={650}
+            width={1560}
+            objectFit="cover"
+          />
         </div>
 
         <div>
-          <Image loading="lazy" src={carouselImage2} alt="Carousel_Image" />
+          <Image
+            loading="lazy"
+            src="/carousel2.jpg"
+            alt="Carousel_Image"
+            height={650}
+            width={1560}
+            objectFit="cover"
+          />
         </div>
 
         <div>
-          <Image loading="lazy" src={carouselImage3} alt="Carousel_Image" />
+          <Image
+            loading="lazy"
+            src="/carousel3.jpg"
+            alt="Carousel_Image"
+            height={650}
+            width={1560}
+            objectFit="cover"
+          />
         </div>
 
         <div>
-          <Image loading="lazy" src={carouselImage4} alt="Carousel_Image" />
+          <Image
+            loading="lazy"
+            src="/carousel4.jpg"
+            alt="Carousel_Image"
+            height={650}
+            width={1560}
+            objectFit="cover"
+          />
         </div>
 
         <div>
-          <Image loading="lazy" src={carouselImage5} alt="Carousel_Image" />
+          <Image
+            loading="lazy"
+            src="/carousel5.jpg"
+            alt="Carousel_Image"
+            height={650}
+            width={1560}
+            objectFit="cover"
+          />
         </div>
 
         <div>
-          <Image loading="lazy" src={carouselImage6} alt="Carousel_Image" />
+          <Image
+            loading="lazy"
+            src="/carousel6.jpg"
+            alt="Carousel_Image"
+            height={650}
+            width={1560}
+            objectFit="cover"
+          />
         </div>
       </Carousel>
     </div>

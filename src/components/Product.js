@@ -2,7 +2,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { StarIcon } from "@heroicons/react/solid";
 import Currency from "react-currency-formatter";
-import PrimeLogo from "../assets/prime_logo.png";
+// import PrimeLogo from "../assets/prime_logo.png";
 
 const MAX_RATING = 5;
 const MIN_RATING = 1;
@@ -50,7 +50,7 @@ const Product = ({ id, title, price, description, category, image }) => {
             loading="lazy"
             width={60}
             height={30}
-            src={PrimeLogo}
+            src="/prime_logo.png"
             alt="Prime_Logo"
           />
           <p className="text-xs text-gray-300">Free Next-Day Delivery</p>
