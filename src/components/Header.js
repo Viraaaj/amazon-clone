@@ -1,5 +1,4 @@
 import Image from "next/image";
-import amazon_logo from "../assets/amazon_logo.png";
 import {
   SearchIcon,
   ShoppingCartIcon,
