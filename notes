@@ -8,3 +8,5 @@
     goto global.css => @layer components{ .classname { @apply styling here} }
 
 5] tailwind css is mobile first so all the styles applied are by default for mobile view
+
+6] Banner: https://www.npmjs.com/package/react-responsive-carousel
