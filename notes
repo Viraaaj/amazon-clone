@@ -10,3 +10,16 @@
 5] tailwind css is mobile first so all the styles applied are by default for mobile view
 
 6] Banner: https://www.npmjs.com/package/react-responsive-carousel
+
+7] Facestore api: https://fakestoreapi.com/
+
+8]  {products.map((product) => (
+        <p>{product.title}</p>
+      ))} 
+
+      After destructuring:
+     {products.map(({id, title}) => (
+        <p>{product.title}</p>
+      ))} 
+
+9] react-currency-formatter: https://www.npmjs.com/package/react-currency-formatter

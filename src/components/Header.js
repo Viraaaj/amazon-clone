@@ -62,7 +62,14 @@ const Header = () => {
           All
         </p>
 
-        <p className="link">Fresh</p>
+        <a
+          className="link"
+          href="http://virajnimbalkar.netlify.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Viraj Here
+        </a>
         <p className="link">Electronics</p>
         <p className="link link hidden lg:inline-flex">Mobiles</p>
         <p className="link hidden lg:inline-flex">Computers</p>
