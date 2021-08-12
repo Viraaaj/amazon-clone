@@ -19,6 +19,7 @@ const Header = () => {
             height={40}
             objectFit="contain"
             className="cursor-pointer"
+            loading="lazy"
           />
         </div>
 

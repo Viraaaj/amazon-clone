@@ -46,7 +46,13 @@ const Product = ({ id, title, price, description, category, image }) => {
 
       {isPrimeItem && (
         <div className="flex items-center space-x-2 mb-2">
-          <Image width={60} height={30} src={PrimeLogo} alt="Prime_Logo" />
+          <Image
+            loading="lazy"
+            width={60}
+            height={30}
+            src={PrimeLogo}
+            alt="Prime_Logo"
+          />
           <p className="text-xs text-gray-300">Free Next-Day Delivery</p>
         </div>
       )}
