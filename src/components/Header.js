@@ -1,12 +1,16 @@
 import Image from "next/image";
 import amazon_logo from "../assets/amazon_logo.png";
-import { SearchIcon, ShoppingCartIcon } from "@heroicons/react/outline";
+import {
+  SearchIcon,
+  ShoppingCartIcon,
+  MenuAlt2Icon,
+} from "@heroicons/react/outline";
 
 const Header = () => {
   return (
     <header>
       {/* main navbar */}
-      <div className="flex items-center bg-amazon_blue p-1 flex-grow py-2">
+      <div className="flex items-center bg-amazon_black p-1 flex-grow py-2">
         <div className="mt-2 flex items-center flex-grow sm:flex-grow-0 ">
           <Image
             src={amazon_logo}
@@ -52,7 +56,22 @@ const Header = () => {
       </div>
 
       {/* category navbar */}
-      <div></div>
+      <div className="flex items-center bg-amazon_black-light text-white text-sm p-2 pl-3 space-x-3 ">
+        <p className="link flex items-center">
+          <MenuAlt2Icon className="h-6 mr-1" />
+          All
+        </p>
+
+        <p className="link">Prime Video</p>
+        <p className="link">Today's Deals</p>
+        <p className="link link hidden lg:inline-flex">Amazon Buisness</p>
+        <p className="link hidden lg:inline-flex">Electronics</p>
+        <p className="link hidden lg:inline-flex">Food & Grocery</p>
+        <p className="link hidden lg:inline-flex">Prime</p>
+        <p className="link hidden lg:inline-flex">Buy Again</p>
+        <p className="link hidden lg:inline-flex">Shopper Toolkit</p>
+        <p className="link hidden lg:inline-flex">Health & Personal Care</p>
+      </div>
     </header>
   );
 };
