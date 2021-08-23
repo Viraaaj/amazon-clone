@@ -40,3 +40,12 @@
             - select project => credentials => client => add localhost 3000
             - In Authorized urls add URL given in error: http://localhost:3000/api/auth/callback/google 
             - Click save
+
+14] After implementing nextauth google authentication:
+      - It will give an error on production build when you try to signin using google etc. 
+      - To resolve this error we need to add client id in environment variables
+      - As environment variables are local to our machine hence we need to upload them to vercel also
+      - go to project => settings => environment variable => open env.local file in project => copy GOOGLE_ID place it in Name and value in value => Click add => follow same for GOOGLE_SECRET
+      - go to latest build in vercel (deployments) and click on redeploy
+      - Again you will get error while signing in through google i.e. developers error
+      - Go to developer console and follow same steps you followed for whitelisting localhost instead here whitelist vercel deployed URL in Authorized redirect URIs and add vercel URL to JS origins
