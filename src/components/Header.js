@@ -4,8 +4,14 @@ import {
   ShoppingCartIcon,
   MenuAlt2Icon,
 } from "@heroicons/react/outline";
+import { signIn, signOut, useSession } from "next-auth/client";
 
 const Header = () => {
+  // using session after wrapping authprovider so that we can get user's email etc
+  const [session] = useSession();
+
+  // session.user.
+
   return (
     <header>
       {/* main navbar */}
@@ -33,9 +39,11 @@ const Header = () => {
 
         {/* options */}
         <div className="text-white flex items-center mx-6 space-x-6 text-xs whitespace-nowrap">
-          <div className=" link ">
-            <p>Hello user</p>
-            <p className="font-extrabold md:text-sm ">Accounts & Lists</p>
+          <div onClick={!session ? signIn : signOut} className=" link ">
+            <p>{session ? `Hello, ${session.user.name}` : `Sign In`}</p>
+            <p className="font-extrabold md:text-sm ">
+              {session ? `Sign Out` : `Accounts & Lists`}
+            </p>
           </div>
 
           <div className=" link ">

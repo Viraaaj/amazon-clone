@@ -1,0 +1,42 @@
+1] Activate emmet: settings => search emmet => include languages => add item => javascript : javascriptreact => add => save
+
+2] after running npm eun dev if you cant see JIT engine enable msg then goto tailwind.config.js file and save that file
+
+2] If using external links for images whitelist those links in next.onfig.js file otherwise it will give an error
+
+3] As I am usingg fakestore for api, this is whitelisted in next.config file
+
+4] Creating custom tailwind css classes:
+    goto global.css => @layer components{ .classname { @apply styling here} }
+
+5] tailwind css is mobile first so all the styles applied are by default for mobile view
+
+6] Banner: https://www.npmjs.com/package/react-responsive-carousel
+
+7] Facestore api: https://fakestoreapi.com/
+
+8]  {products.map((product) => (
+        <p>{product.title}</p>
+      ))} 
+
+      After destructuring:
+     {products.map(({id, title}) => (
+        <p>{title}</p>
+      ))} 
+
+9] react-currency-formatter: https://www.npmjs.com/package/react-currency-formatter
+
+10] NextAuth: https://next-auth.js.org/getting-started/example
+      add folder called auth inside api and create a file named [...nextauth].js inside auth folder
+
+11] Create a folder named api to store api endpoints [Next.js feature] 
+
+12] process.env [environmental variables] used so that others cant see your creds
+
+13] After setting up firebase:
+      Steps: 
+            - click on sign in with google
+            - Goto googles developers console https://console.cloud.google.com/apis/
+            - select project => credentials => client => add localhost 3000
+            - In Authorized urls add URL given in error: http://localhost:3000/api/auth/callback/google 
+            - Click save

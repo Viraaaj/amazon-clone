@@ -2,6 +2,7 @@ import Head from "next/head";
 import Header from "./../components/Header";
 import Banner from "./../components/Banner";
 import ProductFeed from "./../components/ProductFeed";
+import Footer from "./../components/Footer";
 
 export default function Home({ products }) {
   return (
@@ -20,6 +21,8 @@ export default function Home({ products }) {
         {/* Product */}
         <ProductFeed products={products} />
       </main>
+
+      {/* <Footer /> */}
     </div>
   );
 }
