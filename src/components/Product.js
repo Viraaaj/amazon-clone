@@ -3,16 +3,38 @@ import { useState } from "react";
 import { StarIcon } from "@heroicons/react/solid";
 import Currency from "react-currency-formatter";
 // import PrimeLogo from "../assets/prime_logo.png";
+import { useDispatch } from "react-redux";
+import { addToBasket } from "../slices/basketSlice";
 
 const MAX_RATING = 5;
 const MIN_RATING = 1;
 
 const Product = ({ id, title, price, description, category, image }) => {
+  const dispatch = useDispatch();
+
   const [rating] = useState(
     Math.floor(Math.random() * (MAX_RATING - MIN_RATING + 1)) + MIN_RATING
   );
 
   const [isPrimeItem] = useState(Math.random() < 0.5);
+
+  const addItemToCart = () => {
+    const product = {
+      id,
+      title,
+      price,
+      description,
+      category,
+      image,
+      rating,
+      isPrimeItem,
+    };
+
+    // sending product as action to redux store...... basket slice
+    dispatch(addToBasket(product)); //addToBasket imported from slice
+
+    console.log("added Item to cart:", product);
+  };
 
   return (
     <div className="text-white relative flex flex-col bg-amazon_black-light m-5 z-30 p-10 rounded-sm ">
@@ -57,7 +79,9 @@ const Product = ({ id, title, price, description, category, image }) => {
         </div>
       )}
 
-      <button className=" mt-auto button ">Add to Cart</button>
+      <button onClick={addItemToCart} className=" mt-auto button ">
+        Add to Cart
+      </button>
     </div>
   );
 };
