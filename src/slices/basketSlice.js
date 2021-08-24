@@ -1,4 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+toast.configure();
+
+const AddToastNotification = () => {
+  return <div className="text-white">Item added to the basket!</div>;
+};
+
+const RemoveToastNotification = () => {
+  return <div className="text-white">Item removed to the basket!</div>;
+};
 
 const initialState = {
   items: [],
@@ -11,6 +23,11 @@ export const basketSlice = createSlice({
     //actions
     addToBasket: (state, action) => {
       state.items = [...state.items, action.payload]; //product is passed here as a payload ... product.js
+
+      toast.dark(<AddToastNotification />, {
+        position: toast.POSITION.TOP_RIGHT,
+        autoClose: 3000,
+      });
     },
 
     removeFromBasket: (state, action) => {
@@ -30,6 +47,11 @@ export const basketSlice = createSlice({
       }
 
       state.items = updatedBasket;
+
+      toast.dark(<RemoveToastNotification />, {
+        position: toast.POSITION.TOP_RIGHT,
+        autoClose: 3000,
+      });
     },
   },
 });

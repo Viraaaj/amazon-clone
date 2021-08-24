@@ -37,7 +37,7 @@ const Product = ({ id, title, price, description, category, image }) => {
   };
 
   return (
-    <div className="text-white relative flex flex-col bg-amazon_black-light m-5 z-30 p-10 rounded-sm ">
+    <div className="text-white relative flex flex-col bg-amazon_black-light m-5 z-30 p-10 rounded-sm transform transition duration-500 hover:scale-105 ">
       <p className="absolute top-2 right-2 text-xs italic text-gray-200">
         {category}
       </p>

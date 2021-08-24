@@ -40,7 +40,7 @@ const Header = () => {
         {/* searchbar */}
         <div className=" hidden sm:flex bg-yellow-400 hover:bg-yellow-500 cursor-pointer items-center h-10 rounded-md flex-grow">
           <input
-            className="p-2 h-full w-6 flex-grow flex-shrink rounded-l-md outline-none px-4"
+            className="p-2 h-full w-6 flex-grow flex-shrink rounded-l-md outline-none px-4 text-black"
             type="text"
           />
           <SearchIcon className="h-12 p-4" />
