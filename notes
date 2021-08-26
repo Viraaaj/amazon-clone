@@ -49,3 +49,19 @@
       - go to latest build in vercel (deployments) and click on redeploy
       - Again you will get error while signing in through google i.e. developers error
       - Go to developer console and follow same steps you followed for whitelisting localhost instead here whitelist vercel deployed URL in Authorized redirect URIs and add vercel URL to JS origins
+
+15] Stripe Checkout: https://stripe.com/docs/payments/accept-a-payment
+      -Steps:
+            - npm install stripe
+            - npm install @stripe/stripe-js
+            - Goto stripe's offiial website and create a new account
+            - developers => API keys => copy publishable key => env.local => paste publick key
+            - IMP: only for stripe publick key goto next.config.js and add 
+            env: {
+                  stripe_public_key: process.env.STRIPE_PUBLIC_KEY
+                 }
+            - Inside api folder create new file create-checkout-session.js this is backend endpoint
+            - In env.local change HOST to deployment URL 
+            - Stripe allowed countries: https://www.nationsonline.org/oneworld/country_code_list.htm
+            - Setting shipping rates: developer => products => shipping rates => new => fill info => save => copy ID => goto create-checkout-session.js => add shipping_rates
+            - Set up an account name in stripe: IMP

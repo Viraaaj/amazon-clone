@@ -6,6 +6,10 @@ import { useSelector } from "react-redux";
 import CheckoutProduct from "./../components/CheckoutProduct";
 import Currency from "react-currency-formatter";
 import { useSession } from "next-auth/client";
+import { loadStripe } from "@stripe/stripe-js";
+import axios from "axios";
+
+const stripePromise = loadStripe(process.env.stripe_public_key); //Need to use public key so that we can get access to stripe account
 
 const Checkout = () => {
   const items = useSelector(selectItems);
@@ -13,6 +17,25 @@ const Checkout = () => {
   const [session] = useSession(); //Always remember fo wrap session inside rectangle brackets
 
   const total = useSelector(selectTotal);
+
+  const handleCheckoutSession = async () => {
+    const stripe = await stripePromise;
+
+    // calling backend to create checkout session
+    const checkoutSession = await axios.post("/api/create-checkout-session", {
+      items: items,
+      email: session.user.email,
+    });
+
+    //redirecting user to stripe checkout
+    const result = await stripe.redirectToCheckout({
+      sessionId: checkoutSession.data.id,
+    });
+
+    if (result.error) {
+      alert(result.error.message);
+    }
+  };
 
   return (
     <div className="bg-amazon_black-dark text-white min-h-screen ">
@@ -63,6 +86,8 @@ const Checkout = () => {
               </h2>
 
               <button
+                onClick={handleCheckoutSession}
+                role="link" //imp for stripe
                 disabled={!session}
                 className={`button mt-2 ${
                   !session &&
