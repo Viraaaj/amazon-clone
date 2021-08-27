@@ -65,3 +65,18 @@
             - Stripe allowed countries: https://www.nationsonline.org/oneworld/country_code_list.htm
             - Setting shipping rates: developer => products => shipping rates => new => fill info => save => copy ID => goto create-checkout-session.js => add shipping_rates
             - Set up an account name in stripe: IMP
+
+16] Webhooks:
+      - Stripe cli: https://stripe.com/docs/stripe-cli
+      - Download CLI: https://github.com/stripe/stripe-cli/releases/tag/v1.7.0
+      - Open that unzipped folder in cmd
+      - follow: https://stripe.com/docs/stripe-cli#login-account
+      - After logging run: stripe listen --forward-to localhost:3000/api/webhook in cmd
+      - Copy secret => goto env.local => past STRIPE_SIGNING_SECRET
+      - Inside api create webhook.js
+      - Install micro: npm install micro
+      - Install firebase-admin: npm install firebase-admin
+      - Goto firebase console => project => project settings => service accounts => generate new private key => download => paste file in project folder => rename (optional)
+      - Connecting webhooks webhook.js: https://stripe.com/docs/connect/webhooks
+      - After implementing again run stripe listen --forward-to localhost:3000/api/webhook in cmd (make sure secret is same) and after clicking checkout you will see intent 
+      - Dont worry if you get heraders error in cmd

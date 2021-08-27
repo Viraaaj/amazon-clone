@@ -9,6 +9,8 @@ export default function Home({ products }) {
     <div className="bg-amazon_black-dark">
       <Head>
         <title>Amazon Clone</title>
+
+        <link rel="shortcut icon" href="/favicon.png" />
       </Head>
 
       {/* Header */}
