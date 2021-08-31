@@ -87,3 +87,10 @@
 18] Orders:
       - Get info from stripe and firebase
       - setup firebase app in firebase.js file
+
+19] After completion:
+      - Add all keys to vercel => settings => environment variables
+      - Go to vercel url => grab URL (after clicking on sign in with google) => https://amazon-clone-jdt4n165n-viraaaj.vercel.app/
+      - Again goto environment variables => Name is NEXTAUTH_URL => value is above URL 
+      - Again environment variables => Name is HOSt => Value is domain name prod: https://amazon-clone-viraaaj.vercel.app/
+      - STRIPE_SIGNING_SECRET => goto stripe => developers => webhooks => add endpoints => vercel url => https://amazon-clone-jdt4n165n-viraaaj.vercel.app/api/webhook => select event: checkout.session.completed => add endpoints => signing secret
