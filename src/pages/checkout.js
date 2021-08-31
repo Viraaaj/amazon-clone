@@ -9,7 +9,7 @@ import { useSession } from "next-auth/client";
 import { loadStripe } from "@stripe/stripe-js";
 import axios from "axios";
 
-const stripePromise = loadStripe(process.env.stripe_public_key.toString()); //Need to use public key so that we can get access to stripe account
+const stripePromise = loadStripe(process.env.stripe_public_key); //Need to use public key so that we can get access to stripe account
 
 const Checkout = () => {
   const items = useSelector(selectItems);
