@@ -80,3 +80,10 @@
       - Connecting webhooks webhook.js: https://stripe.com/docs/connect/webhooks
       - After implementing again run stripe listen --forward-to localhost:3000/api/webhook in cmd (make sure secret is same) and after clicking checkout you will see intent 
       - Dont worry if you get heraders error in cmd
+
+17] success:
+      - Build a static success page which will redirect to orders
+
+18] Orders:
+      - Get info from stripe and firebase
+      - setup firebase app in firebase.js file
