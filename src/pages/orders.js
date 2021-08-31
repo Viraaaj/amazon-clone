@@ -10,7 +10,7 @@ const Orders = ({ orders }) => {
   console.log("Your orders are:", orders);
 
   return (
-    <div className="bg-amazon_black-dark h-screen">
+    <div className="bg-amazon_black-dark min-h-screen ">
       <Header />
 
       <main className="max-w-screen-lg mx-auto p-10 text-white ">

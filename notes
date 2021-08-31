@@ -90,7 +90,19 @@
 
 19] After completion:
       - Add all keys to vercel => settings => environment variables
-      - Go to vercel url => grab URL (after clicking on sign in with google) => https://amazon-clone-jdt4n165n-viraaaj.vercel.app/
+      - Go to vercel url => grab URL (after clicking on sign in with google) => https://amazon-clone-two-jet.vercel.app/
       - Again goto environment variables => Name is NEXTAUTH_URL => value is above URL 
-      - Again environment variables => Name is HOSt => Value is domain name prod: https://amazon-clone-viraaaj.vercel.app/
-      - STRIPE_SIGNING_SECRET => goto stripe => developers => webhooks => add endpoints => vercel url => https://amazon-clone-jdt4n165n-viraaaj.vercel.app/api/webhook => select event: checkout.session.completed => add endpoints => signing secret
+      - Again environment variables => Name is HOSt => Value is domain name prod: https://amazon-clone-two-jet.vercel.app/
+      - STRIPE_SIGNING_SECRET => goto stripe => developers => webhooks => add endpoints => vercel url => https://amazon-clone-two-jet.vercel.app/api/webhook => select event: checkout.session.completed => add endpoints => signing secret
+
+20] SOLUTION to stripe-checkout not working on deployed version but works on localhost. Sonny Sangha
+So the issue is because of the domain name (solution is the same for everyone who faces this particular error).
+1. So first change your NEXTAUTH_URL and HOST url in environment variables on vercel to the short version in my case -> https://amazon-clone-two-jet.vercel.app
+(DON'T ADD THE TRAILING SLASH IN THE URL EG: "https://amazon-clone-two-jet.vercel.app/")
+You can find the short version by going to the dashboard by clicking on the triangle icon on vercel in header -> select your project and click visit. From there you can copy the url.
+2. After doing this visit the short version of the url and the google login will freak out. Change the redirect url and the other url to the same in step 1 (without the trailing /) and follow the instructions that google give regarding url.
+3. Change the url in the stripe dashboard to the same in step 1. it should look something like this -> https://amazon-clone-two-jet.vercel.app/api/webhook
+4. Remove the long ugly version that is similar to -> https://amazon-clone-jdt4n165n-viraaaj.vercel.app from everywhere mentioned above.
+-This ugly version of url changes with every redeployment of the app or via github.
+5.Now once all that is done. Go to the deployments section on vercel and on the latest version -> click on the 3 dots -> Do Promote to production. That should redeploy the app.
+6. Now once the redeployment is done go to dashboard and navigate to the short url not the long version that is given when you redeploy.
